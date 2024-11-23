@@ -37,7 +37,7 @@ public class FileStorageService {
         Path targetLocation = fileStorageLocation.resolve(fileName + extension);
         try {
             Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
-            return fileName + extension;
+            return fileName;
 
         } catch (IOException e) {
             throw new FileStorageException("No se pudo almacenar el archivo", e);
